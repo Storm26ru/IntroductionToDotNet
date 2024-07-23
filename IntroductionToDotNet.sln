@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.34931.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntroductionToDotNet", "IntroductionToDotNet\IntroductionToDotNet.csproj", "{70F3EB00-437B-43EB-9A53-32531069E0D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shooter", "Shooter\Shooter.csproj", "{2733F47B-8ED0-4BF4-BAC0-9978A6086A2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{70F3EB00-437B-43EB-9A53-32531069E0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70F3EB00-437B-43EB-9A53-32531069E0D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70F3EB00-437B-43EB-9A53-32531069E0D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2733F47B-8ED0-4BF4-BAC0-9978A6086A2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2733F47B-8ED0-4BF4-BAC0-9978A6086A2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2733F47B-8ED0-4BF4-BAC0-9978A6086A2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2733F47B-8ED0-4BF4-BAC0-9978A6086A2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
