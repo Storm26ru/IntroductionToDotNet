@@ -37,36 +37,7 @@ namespace IntroductionToDotNet
 			Console.WriteLine(String.Format("Ваше имя: {0}, Ваша фамилия: {1}, Ваш возраст: {2}", name, last_name, age)); //Форматирование строк
 			Console.WriteLine($"Ваше имя: {name}, Ваша фамилия: {last_name},Ваш возраст: {age}");//Интерполяция строк  
 #endif
-			int num = 5;
-			for (int i = 0; i < num; i++)
-			{
-				for (int j = 0; j < num; j++)
-				{
-					Console.Write("*");
-				}
-				Console.WriteLine();
-			}
-
-			for (int i = 0; i < num; i++)
-			{
-				for (int j = 0; j <= i; j++)
-				{
-					Console.Write("*");
-				}
-				Console.WriteLine();
-			}
-
-			for (int i = 0; i < num; i++)
-			{
-				for (int j = 0; j < num; j++)
-				{
-
-					Console.Write(i % 2 == j % 2 ? "+ " : "- ");
-				}
-				Console.WriteLine();
-
-				//Console.Clear();
-			}
+			
 		}
 	}
 }

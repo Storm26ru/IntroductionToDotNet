@@ -52,12 +52,20 @@ namespace Geometry
 				Console.WriteLine();
 			}
 			Console.WriteLine(delimiter);
-			for(int i =0; i<num*2; i++)
+			for(int i =0; i<num; i++) //TASK_5
 			{
-
+				for (int k = 0; k < num -1 - i; k++) Console.Write(" ");Console.Write("/");
+				for (int j = 0; j <i; j++) Console.Write("  ");
+				Console.Write("\\"); Console.WriteLine();
 			}
-			
-			for (int i = 0; i < num; i++)
+			for(int i =0; i<num; i++)
+			{
+				for (int k = 0; k < i; k++) Console.Write(" "); Console.Write("\\");
+				for (int j = 0; j < num - 1 - i; j++) Console.Write("  ");
+				Console.Write("/"); Console.WriteLine();
+			}
+			Console.WriteLine(delimiter);
+			for (int i = 0; i < num; i++) //TASK_6
 			{
 				for (int j = 0; j < num; j++)
 				{
