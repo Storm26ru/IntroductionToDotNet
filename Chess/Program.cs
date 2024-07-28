@@ -11,9 +11,9 @@ namespace Chess
 		const string delimiter = "\n-------------------------------------------------------------------\n";
 		static void Main(string[] args)
 		{
-			Console.Write("Введите размеp: ");// Hard chess
+			Console.Write("Введите размеp: ");
 			int num = Convert.ToInt32(Console.ReadLine());
-			for (int i = 0; i < num * num; i++)
+			for (int i = 0; i < num * num; i++)// Hard chess
 			{
 				for (int j = 0; j < num * num; j++) Console.Write((i / num % 2 == j / num % 2 ? "* " : "  "));
 				Console.WriteLine();
