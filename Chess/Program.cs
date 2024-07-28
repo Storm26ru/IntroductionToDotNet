@@ -11,7 +11,7 @@ namespace Chess
 		const string delimiter = "\n-------------------------------------------------------------------\n";
 		static void Main(string[] args)
 		{
-			Console.Write("Введите размеp: ");
+			Console.Write("Введите размеp: ");// Hard chess
 			int num = Convert.ToInt32(Console.ReadLine());
 			for (int i = 0; i < num * num; i++)
 			{
@@ -19,7 +19,7 @@ namespace Chess
 				Console.WriteLine();
 			}
 			Console.WriteLine(delimiter);
-			Console.OutputEncoding = System.Text.Encoding.GetEncoding(28591);
+			Console.OutputEncoding = System.Text.Encoding.GetEncoding(28591);// Chess board ASCII
 			Console.Write((char)218);
 			for (int i = 0; i < num; i++) Console.Write($"{(char)196}{(char)196}");
 			Console.WriteLine((char)191);
