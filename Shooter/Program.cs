@@ -25,11 +25,7 @@ namespace Shooter
 			Console.CursorVisible = false;
 			Console.OutputEncoding = System.Text.Encoding.GetEncoding(28591);
 			Console.Write($"{(char)177}{(char)177}");
-			/*for (int i = 0; i < 256; i++)
-			{
-				if (i % 16 == 0) Console.WriteLine();
-				Console.Write((char)i + " "+i+" ");
-			}*/
+		
 			ConsoleKey play;
 			do
 			{
