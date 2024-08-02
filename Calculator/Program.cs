@@ -23,6 +23,6 @@ namespace Calculator
 					if(operand[0]!="0") Console.WriteLine($" {operand[0]} / {operand[1]} = {Convert.ToDouble(operand[0]) / Convert.ToDouble(operand[1])}"); 
 					else Console.WriteLine("Деление на ноль"); break;
 			}
-		}
+		} 
 	}
 }

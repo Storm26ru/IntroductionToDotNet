@@ -19,7 +19,7 @@ namespace Chess
 				Console.WriteLine();
 			}
 			Console.WriteLine(delimiter);
-			Console.OutputEncoding = System.Text.Encoding.GetEncoding(28591);// Chess board ASCII
+			Console.OutputEncoding = System.Text.Encoding.GetEncoding(28591);// Chess board ASCII 
 			Console.Write((char)218);
 			for (int i = 0; i < num; i++) Console.Write($"{(char)196}{(char)196}");
 			Console.WriteLine((char)191);
