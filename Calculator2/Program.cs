@@ -16,13 +16,33 @@ namespace Calculator2
 			double[] d_operands = new double[s_operands.Length];
 			for (int i = 0; i < s_operands.Length; i++) d_operands[i] = Convert.ToDouble(s_operands[i]);
 			char[] c_operators = expression.Where(p => s_operators.Contains(p)).ToArray();
-			//foreach (char op in c_operators) Console.WriteLine(op);
 			for(int i =0; i<c_operators.Length; i++)
 			{
-				if (c_operators[i] == '*') d_operands[i] *= d_operands[i + 1];
-				if (c_operators[i] == '/') d_operands[i] /= d_operands[i + 1];
-				for(int j = )
+                while (c_operators[i] == '*'||c_operators[i]=='/')
+				{
+					
+					if(c_operators[i]=='*') d_operands[i] *= d_operands[i + 1];
+					if(c_operators[i]=='/') d_operands[i] /= d_operands[i + 1];
+					for (int j = i + 1; j < d_operands.Length - 1; j++) d_operands[j] = d_operands[j + 1];
+					for (int j = i; j < c_operators.Length - 1; j++) c_operators[j] = c_operators[j + 1];
+					d_operands[d_operands.Length - 1] = 0;
+					c_operators[c_operators.Length - 1] = '\0';
+                }
 			}
+			
+			for (int i = 0; i<c_operators.Length; i++)
+			{
+				while (c_operators[i] == '+' || c_operators[i] == '-')
+				{
+					if (c_operators[i] == '+') d_operands[i] += d_operands[i + 1];
+					if (c_operators[i] == '-') d_operands[i] -= d_operands[i + 1];
+					for (int j = i + 1; j < d_operands.Length - 1; j++) d_operands[j] = d_operands[j + 1];
+					for (int j = i; j < c_operators.Length - 1; j++) c_operators[j] = c_operators[j + 1];
+					d_operands[d_operands.Length - 1] = 0;
+					c_operators[c_operators.Length - 1] = '\0';
+				}
+            }
+			Console.WriteLine(d_operands[0]);
 			
 		}
 	}
