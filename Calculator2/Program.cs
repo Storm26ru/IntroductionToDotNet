@@ -11,46 +11,10 @@ namespace Calculator2
 		static string expression;
 		static void Main(string[] args)
 		{
-			//expression =  Console.ReadLine();
-			expression = "22+(33-8)*(4+7)/8"; //Console.ReadLine();
-			Console.WriteLine(top_priority(expression));
-			Console.WriteLine($"Ответ: {calculation(expression)}");
-		}
-
-		static string top_priority(string expression)
-		{
-			expression = expression.Replace('.', ',');
-			for (int i = 0; i < expression.Length; i++)
-			{
-				if (expression[i] == '(')
-				{
-					for (int j = i + 1; j < expression.Length; j++)
-					{
-						if (expression[j] == '(')top_priority (expression.Substring(j + 1, expression.Length - j - 1));
-						if (expression[j] == ')')
-						{
-							string buffer = expression.Substring(i + 1, j - i - 1);
-							if (!buffer.Contains('(') && !buffer.Contains(')'))
-							{
-								double result = calculation(buffer);
-								Program.expression = expression.Replace($"({buffer})", result.ToString());
-							}
-							top_priority(Program.expression);
-						}
-					}
-				}
-				if (expression[i] == ')')
-				{
-					string buffer = expression.Substring(0, i);
-					if (!buffer.Contains('(') && !buffer.Contains(')'))
-					{
-						double result = calculation(buffer);
-						Program.expression = expression.Replace($"{buffer})", result.ToString());
-					}
-					top_priority(Program.expression);
-				}
-			}
-			return expression;
+			expression ="22 + (33 - 8) * (4 + 7) / 8"; //Console.ReadLine();
+			Console.Clear();
+			Console.Write(top_priority(expression));
+			Console.WriteLine($" = {calculation(expression)}");
 		}
 
 		static double calculation(string expression)
@@ -73,7 +37,6 @@ namespace Calculator2
 					operators[operators.Length - 1] = '\0';
 				}
 			}
-
 			for (int i = 0; i < operators.Length; i++)
 			{
 				while (operators[i] == '+' || operators[i] == '-')
@@ -87,6 +50,30 @@ namespace Calculator2
 				}
 			}
 			return d_operands[0];
+		}
+		static string top_priority(string expression)
+		{
+			expression = expression.Replace('.', ',');
+			for (int i = 0; i < expression.Length; i++)
+			{
+				if (expression[i] == '(')
+				{
+					for (int j = i + 1; j < expression.Length; j++)
+					{
+						if (expression[j] == ')')
+						{
+							string buffer = expression.Substring(i + 1, j - i - 1);
+							if (!buffer.Contains('(') && !buffer.Contains(')'))
+							{
+								double result = calculation(buffer);
+								Program.expression = expression.Replace($"({buffer})", result.ToString());
+							}
+							top_priority(Program.expression);
+						}
+					}
+				}
+			}
+			return expression;
 		}
 	}
 }
