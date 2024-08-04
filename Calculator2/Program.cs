@@ -20,20 +20,20 @@ namespace Calculator2
 		static double calculation(string expression)
 		{
 			expression = expression.Replace('.',',').Replace(" ","");
-			string[] s_operands = expression.Split('+', '-', '*', '/');
+			string[] st_operands = expression.Split('+', '-', '*', '/');
 			//foreach (string item in s_operands) Console.WriteLine(item);
 			char[] operators = expression.Where(p => "+-*/".Contains(p)).ToArray();
-			double[] d_operands = new double[s_operands.Length];
-			for (int i = 0; i < s_operands.Length; i++) d_operands[i] = Convert.ToDouble(s_operands[i]);
+			double[] db_operands = new double[st_operands.Length];
+			for (int i = 0; i < st_operands.Length; i++) db_operands[i] = Convert.ToDouble(st_operands[i]);
 			for (int i = 0; i < operators.Length; i++)
 			{
 				while (operators[i] == '*' || operators[i] == '/')
 				{
-					if (operators[i] == '*') d_operands[i] *= d_operands[i + 1];
-					if (operators[i] == '/') d_operands[i] /= d_operands[i + 1];
-					for (int j = i + 1; j < d_operands.Length - 1; j++) d_operands[j] = d_operands[j + 1];
+					if (operators[i] == '*') db_operands[i] *= db_operands[i + 1];
+					if (operators[i] == '/') db_operands[i] /= db_operands[i + 1];
+					for (int j = i + 1; j < db_operands.Length - 1; j++) db_operands[j] = db_operands[j + 1];
 					for (int j = i; j < operators.Length - 1; j++) operators[j] = operators[j + 1];
-					d_operands[d_operands.Length - 1] = 0;
+					db_operands[db_operands.Length - 1] = 0;
 					operators[operators.Length - 1] = '\0';
 				}
 			}
@@ -41,15 +41,15 @@ namespace Calculator2
 			{
 				while (operators[i] == '+' || operators[i] == '-')
 				{
-					if (operators[i] == '+') d_operands[i] += d_operands[i + 1];
-					if (operators[i] == '-') d_operands[i] -= d_operands[i + 1];
-					for (int j = i + 1; j < d_operands.Length - 1; j++) d_operands[j] = d_operands[j + 1];
+					if (operators[i] == '+') db_operands[i] += db_operands[i + 1];
+					if (operators[i] == '-') db_operands[i] -= db_operands[i + 1];
+					for (int j = i + 1; j < db_operands.Length - 1; j++) db_operands[j] = db_operands[j + 1];
 					for (int j = i; j < operators.Length - 1; j++) operators[j] = operators[j + 1];
-					d_operands[d_operands.Length - 1] = 0;
+					db_operands[db_operands.Length - 1] = 0;
 					operators[operators.Length - 1] = '\0';
 				}
 			}
-			return d_operands[0];
+			return db_operands[0];
 		}
 		static string top_priority(string expression)
 		{
