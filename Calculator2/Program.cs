@@ -11,9 +11,10 @@ namespace Calculator2
 		static string expression;
 		static void Main(string[] args)
 		{
-			expression ="22 + (33 - 8) * (4 + 7) / 8"; //Console.ReadLine();
+			expression = "((2+3)*(5+1)-5)+1"; //Console.ReadLine();
 			Console.Clear();
-			Console.Write(top_priority(expression));
+			top_priority(expression);
+			Console.Write(expression);
 			Console.WriteLine($" = {calculation(expression)}");
 		}
 
@@ -27,7 +28,7 @@ namespace Calculator2
 			for (int i = 0; i < st_operands.Length; i++) db_operands[i] = Convert.ToDouble(st_operands[i]);
 			for (int i = 0; i < operators.Length; i++)
 			{
-				while (operators[i] == '*' || operators[i] == '/')
+				if (operators[i] == '*' || operators[i] == '/')
 				{
 					if (operators[i] == '*') db_operands[i] *= db_operands[i + 1];
 					if (operators[i] == '/') db_operands[i] /= db_operands[i + 1];
@@ -51,7 +52,7 @@ namespace Calculator2
 			}
 			return db_operands[0];
 		}
-		static string top_priority(string expression)
+		static void top_priority(string expression)
 		{
 			expression = expression.Replace('.', ',');
 			for (int i = 0; i < expression.Length; i++)
@@ -60,9 +61,10 @@ namespace Calculator2
 				{
 					for (int j = i + 1; j < expression.Length; j++)
 					{
+						if (expression[j] == '(')top_priority (expression.Substring(j + 1, expression.Length - j - 1)); 
 						if (expression[j] == ')')
 						{
-							string buffer = expression.Substring(i + 1, j - i - 1);
+							string buffer = expression.Substring(i + 1, j - i - 1); Console.WriteLine(buffer);
 							if (!buffer.Contains('(') && !buffer.Contains(')'))
 							{
 								double result = calculation(buffer);
@@ -72,8 +74,18 @@ namespace Calculator2
 						}
 					}
 				}
+				if (expression[i] == ')')
+				{
+					string buffer = expression.Substring(0, i);
+					if (!buffer.Contains('(') && !buffer.Contains(')'))
+					{
+						double result = calculation(buffer);
+						Program.expression = expression.Replace($"{buffer})", result.ToString());
+					}
+					top_priority(Program.expression);
+				}
 			}
-			return expression;
+			//return expression;
 		}
 	}
 }
