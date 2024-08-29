@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chess", "Chess\Chess.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator2", "Calculator2\Calculator2.csproj", "{BBE1BDC6-115B-4A7E-977D-787D6C0993E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP", "OOP\OOP.csproj", "{E6F94DB8-492C-49D7-A5C0-8D9FF7205BE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fraction", "Fraction\Fraction.csproj", "{1361785E-D210-44F1-9953-258DEC7D744C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{BBE1BDC6-115B-4A7E-977D-787D6C0993E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBE1BDC6-115B-4A7E-977D-787D6C0993E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBE1BDC6-115B-4A7E-977D-787D6C0993E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6F94DB8-492C-49D7-A5C0-8D9FF7205BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6F94DB8-492C-49D7-A5C0-8D9FF7205BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6F94DB8-492C-49D7-A5C0-8D9FF7205BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6F94DB8-492C-49D7-A5C0-8D9FF7205BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1361785E-D210-44F1-9953-258DEC7D744C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1361785E-D210-44F1-9953-258DEC7D744C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1361785E-D210-44F1-9953-258DEC7D744C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1361785E-D210-44F1-9953-258DEC7D744C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
