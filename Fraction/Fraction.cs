@@ -37,6 +37,16 @@ namespace Fraction
         {
             Integer = other.Integer; Numerator = other.Numerator; Denominator = other.Denominator;
         }
+        public Fraction(double number)
+        {
+            Integer = (int)number;
+            number -= Integer;
+            number += 1e-10;
+            Denominator +=(int)1e+9;
+            Numerator = (int)number * Denominator;
+
+
+        }
         ~Fraction()
         {
             Console.WriteLine($"Destruction {this.GetHashCode()}");
@@ -68,6 +78,20 @@ namespace Fraction
             (Invert.Numerator, Invert.Denominator) = (Invert.Denominator, Invert.Numerator);
             return Invert;
         }
+        public Fraction Reduce()
+        {
+            ToProper();
+            int bufer_numerator = Numerator;
+            int bufer_denominator = Denominator;
+            int gcd;
+            while(bufer_denominator%bufer_numerator!=0)
+            {
+                gcd = bufer_denominator % bufer_numerator;
+                bufer_denominator = bufer_numerator;
+                bufer_numerator = gcd;
+            }
+            return new Fraction()
+        }
         //                    Operators
         public static Fraction operator *(Fraction Left, Fraction Right)
 
@@ -94,6 +118,31 @@ namespace Fraction
         {
             return new Fraction(other.Integer - 1, other.Numerator, other.Denominator);
         }
+        public static bool operator == (Fraction Left, Fraction Right)
+        {
+            return Left.ToImproper().Numerator * Right.Denominator == Right.ToImproper().Numerator * Left.Denominator; 
+        }
+        public static bool operator !=(Fraction Left, Fraction Right)
+        {
+            return !(Left == Right);
+        }
+        public static bool operator <(Fraction Left, Fraction Right)
+        {
+            return Left.ToImproper().Numerator * Right.Denominator < Right.ToImproper().Numerator * Left.Denominator;
+        }
+        public static bool operator >(Fraction Left, Fraction Right)
+        {
+            return !(Left < Right);
+        }
+        public static bool operator <=(Fraction Left, Fraction Right)
+        {
+            return !(Left > Right);
+        }
+        public static bool operator >=(Fraction Left, Fraction Right)
+        {
+            return !(Left < Right);
+        }
+
     }
 }
      

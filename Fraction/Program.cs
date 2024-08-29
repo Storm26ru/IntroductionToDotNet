@@ -26,7 +26,7 @@ namespace Fraction
             A.Print();
             B.Print();
             // (++A).Print();
-            A++;
+            --A;
             A.Print();
 
 
