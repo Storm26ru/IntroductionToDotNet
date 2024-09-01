@@ -31,7 +31,7 @@ namespace Fraction
             (B - A).Print();
             (++A).Print();
             --A; A.Print();
-            Console.WriteLine(new Fraction(1, 3) >= new Fraction(1, 2));
+            Console.WriteLine(new Fraction(1, 2) >= new Fraction(1, 2));
             Fraction C =  new Fraction(2.76); C.Print();
             //Fraction C = new Fraction(1,3600,724);
            // C.ToProper().Print();

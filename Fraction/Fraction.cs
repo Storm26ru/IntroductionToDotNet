@@ -15,27 +15,29 @@ namespace Fraction
         public Fraction()
         {
             Denominator = 1;
-            Console.WriteLine($"DefConstruction {this.GetHashCode()}");
+            Console.WriteLine($"DefConstructror: {this.GetHashCode()}");
         }
         public Fraction(int integer)
         {
             Integer = integer;
             Denominator = 1;
-            Console.WriteLine($"Constrfction_1 {this.GetHashCode()}");
+            Console.WriteLine($"Constructor: {this.GetHashCode()}");
         }
         public Fraction(int integer, int numerator, int denominator)
         {
             Integer = integer; Numerator = numerator; Denominator = denominator;
-            Console.WriteLine($"Construction_3 {this.GetHashCode()}");
+            Console.WriteLine($"Constructor: {this.GetHashCode()}");
         }
         public Fraction(int numerator, int denominator)
         {
             Numerator = numerator; Denominator = denominator;
-            Console.WriteLine($"Construction_2 {this.GetHashCode()}");
+            Console.WriteLine($"Constructor: {this.GetHashCode()}");
         }
         public Fraction(Fraction other)
         {
             Integer = other.Integer; Numerator = other.Numerator; Denominator = other.Denominator;
+            Console.WriteLine($"CopyConstructor: {this.GetHashCode()}");
+
         }
         public Fraction(double number)
         {
@@ -51,7 +53,7 @@ namespace Fraction
         }
         ~Fraction()
         {
-            Console.WriteLine($"Destruction {this.GetHashCode()}");
+            Console.WriteLine($"Destructor: {this.GetHashCode()}");
         }
         //                  Methods
         public void Print()
