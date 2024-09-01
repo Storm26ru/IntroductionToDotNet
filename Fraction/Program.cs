@@ -25,10 +25,20 @@ namespace Fraction
             Fraction B = new Fraction(3, 4, 5);
             A.Print();
             B.Print();
-            // (++A).Print();
-            --A;
-            A.Print();
-
+            (A * B).Print();
+            (A / B).Print();
+            (A + B).Print();
+            (B - A).Print();
+            (++A).Print();
+            --A; A.Print();
+            Console.WriteLine(new Fraction(1, 3) >= new Fraction(1, 2));
+            Fraction C =  new Fraction(2.76); C.Print();
+            //Fraction C = new Fraction(1,3600,724);
+           // C.ToProper().Print();
+            //C.ToProper().Print();
+            //C.Print();
+            //C.Reduce().Print();
+            
 
 
         }
